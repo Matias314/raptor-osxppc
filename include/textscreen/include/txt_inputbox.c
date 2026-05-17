@@ -30,6 +30,15 @@
 #define strdup _strdup
 #endif
 
+#ifndef HAVE_STRNLEN
+size_t
+strnlen(const char *str, size_t n)
+{
+    const char * stop = (char *)memchr(str, '\0', n);
+    return stop ? stop - str : n;
+}
+#endif
+
 extern txt_widget_class_t txt_inputbox_class;
 extern txt_widget_class_t txt_int_inputbox_class;
 

@@ -28,5 +28,5 @@ target_include_directories(textscreen
 if(MSVC)
     target_link_libraries(textscreen SDL2::SDL2)
 else()
-    target_link_libraries(textscreen m SDL2::SDL2)
+    target_link_libraries(textscreen m SDL2)
 endif()

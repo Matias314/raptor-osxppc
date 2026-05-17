@@ -244,7 +244,7 @@ CORE_Init(
 )
 {
     OSStatus result;
-    AudioComponentDescription desc;
+    ComponentDescription desc;
     AURenderCallbackStruct callback;
     AudioStreamBasicDescription pcmDesc;
     AUNode outputnode, mixernode, pcmnode, synthnode;

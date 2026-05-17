@@ -12,7 +12,7 @@ cat << EOF
 Select build:
 
   1. Release build aarch64
-  2. Release build x86-64
+  2. Release build ppc
   3. Clean all
   0. Exit
 
@@ -28,8 +28,8 @@ case $select in
            arch="arm64"
            archname="aarch64";;
         2) 
-           arch="x86_64"
-           archname="x86-64";;
+           arch="ppc"
+           archname="ppc";;
         3)
            rm -rf build
            rm -rf pkg/osx/build

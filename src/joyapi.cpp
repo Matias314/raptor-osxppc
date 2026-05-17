@@ -131,41 +131,6 @@ GetJoyButtonMapping(
 	void
 )
 {
-	for (ControllerIndex = 0;
-		ControllerIndex < MAX_CONTROLLERS;
-		++ControllerIndex)
-	{
-		switch (SDL_GameControllerTypeForIndex(ControllerIndex))
-		{
-		case SDL_CONTROLLER_TYPE_PS3:
-		case SDL_CONTROLLER_TYPE_PS4:
-		case SDL_CONTROLLER_TYPE_PS5:
-			AButtonconvert = 0;
-			BButtonconvert = 1;
-			XButtonconvert = 3;
-			YButtonconvert = 2;
-			break;
-		
-		case SDL_CONTROLLER_TYPE_NINTENDO_SWITCH_PRO:
-		case SDL_CONTROLLER_TYPE_XBOX360:
-		case SDL_CONTROLLER_TYPE_XBOXONE:
-			AButtonconvert = 0;
-			BButtonconvert = 1;
-			XButtonconvert = 2;
-			YButtonconvert = 3;
-			break;
-		
-		default:
-			if ((AButtonconvert == 0) && (BButtonconvert == 0) && (XButtonconvert == 0) && (YButtonconvert == 0))
-			{
-				AButtonconvert = 0;
-				BButtonconvert = 1;
-				XButtonconvert = 2;
-				YButtonconvert = 3;
-			}
-			break;
-		}
-	}
 }
 
 /***************************************************************************
@@ -176,13 +141,6 @@ IPT_CalJoyRumbleLow(
 	void
 )
 {
-	for (ControllerIndex = 0;
-		ControllerIndex < MAX_CONTROLLERS;
-		++ControllerIndex)
-	{
-		if (ControllerHandles[ControllerIndex])
-			SDL_GameControllerRumble(ControllerHandles[ControllerIndex], 0x3fff, 0x3fff, 1000);
-	}
 }
 
 /***************************************************************************
@@ -193,13 +151,6 @@ IPT_CalJoyRumbleMedium(
 	void
 )
 {
-	for (ControllerIndex = 0;
-		ControllerIndex < MAX_CONTROLLERS;
-		++ControllerIndex)
-	{
-		if (ControllerHandles[ControllerIndex])
-		    SDL_GameControllerRumble(ControllerHandles[ControllerIndex], 0x7ffe, 0x7ffe, 1000);
-	}
 }
 
 /***************************************************************************
@@ -210,13 +161,6 @@ IPT_CalJoyRumbleHigh(
 	void
 )
 {
-	for (ControllerIndex = 0;
-		ControllerIndex < MAX_CONTROLLERS;
-		++ControllerIndex)
-	{
-		if (ControllerHandles[ControllerIndex])
-			SDL_GameControllerRumble(ControllerHandles[ControllerIndex], 0xbffd, 0xbffd, 1000);
-	}
 }
 
 /***************************************************************************
